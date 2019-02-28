@@ -19,7 +19,7 @@ public class CustomerDao {
 		String sql = "insert into customer values(?,?,?)";
 		// p.load(new FileReader("/MyWebApp/src/oracle.info"));
 		try {
-			dbprop.load(this.getClass().getClassLoader().getResourceAsStream("oracle.info"));
+			dbprop.load(this.getClass().getClassLoader().getResourceAsStream("prod-db.properties"));
 			System.out.println(dbprop.getProperty("driverClassName"));
 			Class.forName(dbprop.getProperty("driverClassName"));
 			conn = DriverManager.getConnection(dbprop.getProperty("url"), dbprop.getProperty("username"),
